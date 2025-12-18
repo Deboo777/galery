@@ -1,5 +1,6 @@
 package com.example.galery
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Switch
@@ -20,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -65,14 +68,15 @@ fun Sc2() {
 
         item {
 
-            Row(modifier = Modifier.fillMaxSize(),)
+            Row(modifier = Modifier.fillMaxSize())
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Мем 1",Toast.LENGTH_SHORT).show()} }){if(switch.value){
+                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop)
                 }
                 else{
-                    Image(painter = painterResource(R.drawable.mem1), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+                    Image(painter = painterResource(R.drawable.mem1), contentDescription = null ,contentScale = ContentScale.Crop)
+                }}
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) {
                     OutlinedTextField(
@@ -96,11 +100,13 @@ fun Sc2() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Мем 2",Toast.LENGTH_SHORT).show()} }){if(switch.value){
                     Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 else{
                     Image(painter = painterResource(R.drawable.mem2), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                }
                 }
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
@@ -125,12 +131,16 @@ fun Sc2() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             {   val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Мем 3",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.mem3), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.mem3), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
                     label = { Text("Введите текст") },
@@ -154,12 +164,16 @@ fun Sc2() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Мем 4",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.mem4), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.mem4), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
                     label = { Text("Введите текст") },
@@ -183,12 +197,16 @@ fun Sc2() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Мем 5",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.mem5), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.mem5), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
                     label = { Text("Введите текст") },
@@ -210,12 +228,7 @@ fun Sc2() {
                     Text(text = round(sliderPosition.value).toString())
                 }
             }
-
-
         }
-
-
-
     }
 }
 @Composable
@@ -230,12 +243,16 @@ fun Sc3() {
 
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Котик 1",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.kot1), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.kot1), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) {
                     OutlinedTextField(
@@ -260,12 +277,16 @@ fun Sc3() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Котик 2",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.kot2), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.kot2), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
                     label = { Text("Введите текст") },
@@ -289,12 +310,16 @@ fun Sc3() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             {   val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Котик 3",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.kot3), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.kot3), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
                     label = { Text("Введите текст") },
@@ -318,12 +343,16 @@ fun Sc3() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Котик 4",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.kot4), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.kot4), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
                     label = { Text("Введите текст") },
@@ -347,12 +376,16 @@ fun Sc3() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Котик 5",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.kot5), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.kot5), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
                     label = { Text("Введите текст") },
@@ -374,12 +407,7 @@ fun Sc3() {
                     Text(text = round(sliderPosition.value).toString())
                 }
             }
-
-
         }
-
-
-
     }
 }
 @Composable
@@ -394,12 +422,16 @@ fun Sc4() {
 
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Фентизи 1",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.fan1), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.fan1), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
+
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) {
                     OutlinedTextField(
@@ -424,11 +456,14 @@ fun Sc4() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
-                else{
-                    Image(painter = painterResource(R.drawable.fan2), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Фентизи 2",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.fan2), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
@@ -453,40 +488,14 @@ fun Sc4() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             {   val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
-                else{
-                    Image(painter = painterResource(R.drawable.fan3), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
-                val text = remember { mutableStateOf("") }
-                Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
-                    label = { Text("Введите текст") },
-                    value = text.value,
-                    onValueChange = { text.value = it }
-                )
-                    Text(text = text.value)
-                    Switch(checked = switch.value, onCheckedChange = { switch.value = it })
-                    val sliderPosition = remember { mutableFloatStateOf(0f) }
-
-                    Slider(
-                        value = sliderPosition.value,
-                        onValueChange = {
-                            sliderPosition.value = it
-                        },
-                        steps = 10,
-                        valueRange = 1f..10f
-                    )
-                    Text(text = round(sliderPosition.value).toString())
-                }
-            }
-            Row(modifier = Modifier.fillMaxSize(),)
-            { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
-                }
-                else{
-                    Image(painter = painterResource(R.drawable.fan4), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Фентизи 3",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.fan3), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
@@ -511,11 +520,46 @@ fun Sc4() {
             }
             Row(modifier = Modifier.fillMaxSize(),)
             { val switch = remember { mutableStateOf(false) }
-                if(switch.value){
-                    Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Фентизи 4",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.fan4), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
-                else{
-                    Image(painter = painterResource(R.drawable.fan5), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                val text = remember { mutableStateOf("") }
+                Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
+                    label = { Text("Введите текст") },
+                    value = text.value,
+                    onValueChange = { text.value = it }
+                )
+                    Text(text = text.value)
+                    Switch(checked = switch.value, onCheckedChange = { switch.value = it })
+                    val sliderPosition = remember { mutableFloatStateOf(0f) }
+
+                    Slider(
+                        value = sliderPosition.value,
+                        onValueChange = {
+                            sliderPosition.value = it
+                        },
+                        steps = 10,
+                        valueRange = 1f..10f
+                    )
+                    Text(text = round(sliderPosition.value).toString())
+                }
+            }
+            Row(modifier = Modifier.fillMaxSize(),)
+            { val switch = remember { mutableStateOf(false) }
+                val context = LocalContext.current
+                IconButton(modifier = Modifier.size(150.dp),onClick = { if (switch.value){Toast.makeText(context,"Сомнительно Но Окей",Toast.LENGTH_SHORT).show()}else{Toast.makeText(context,"Фентизи 5",Toast.LENGTH_SHORT).show()} }){
+                    if(switch.value){
+                        Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
+                    else{
+                        Image(painter = painterResource(R.drawable.fan5), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    }
                 }
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(

@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity() {
                             .fillMaxSize()
                             .padding(innerPadding)
                     ) {
+
                         NavigationGraph()
 
 
