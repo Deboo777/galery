@@ -4,6 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
@@ -38,7 +40,7 @@ fun NavigationGraph() {
 }
 @Composable
 fun Sc1(navController: NavHostController) {
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = Modifier.fillMaxSize().offset(x = 125.dp, y = 250.dp)) {
         Text(text = "Выбери галерею")
         Button(onClick = { navController.navigate("Sc2") }) {
         Text("Memas")
@@ -47,7 +49,7 @@ fun Sc1(navController: NavHostController) {
             Text("Kotiki")
         }
         Button(onClick = { navController.navigate("Sc4") }) {
-            Text("Memas")
+            Text("Fentazy")
         }
     }
 
@@ -396,7 +398,7 @@ fun Sc4() {
                     Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 else{
-                    Image(painter = painterResource(R.drawable.mem1), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    Image(painter = painterResource(R.drawable.fan1), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) {
@@ -426,7 +428,7 @@ fun Sc4() {
                     Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 else{
-                    Image(painter = painterResource(R.drawable.mem2), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    Image(painter = painterResource(R.drawable.fan2), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
@@ -455,7 +457,7 @@ fun Sc4() {
                     Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 else{
-                    Image(painter = painterResource(R.drawable.mem3), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    Image(painter = painterResource(R.drawable.fan3), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
@@ -484,7 +486,7 @@ fun Sc4() {
                     Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 else{
-                    Image(painter = painterResource(R.drawable.mem4), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    Image(painter = painterResource(R.drawable.fan4), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
@@ -513,7 +515,7 @@ fun Sc4() {
                     Image(painter = painterResource(R.drawable.memvagno), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 else{
-                    Image(painter = painterResource(R.drawable.mem5), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
+                    Image(painter = painterResource(R.drawable.fan5), contentDescription = null ,contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp))
                 }
                 val text = remember { mutableStateOf("") }
                 Column(modifier = Modifier.fillMaxSize()) { OutlinedTextField(
